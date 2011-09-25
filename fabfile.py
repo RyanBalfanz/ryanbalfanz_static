@@ -35,4 +35,5 @@ def deploy(branch="master"):
 	require('hosts', provided_by = [prod,])
 	local("git push origin {branch}".format(branch=branch))
 	with cd(env.remote_app_dir):
-		run("git pull origin {branch}".format(dir=env.remote_app_dir, branch=branch))
+		run("git pull origin".format(branch=branch))
+		run("git checkout {branch}".format(branch=branch))
