@@ -3,24 +3,82 @@
 	<head>
 		<title>Znaflab</title>
 		
-		<!-- <link rel="shortcut icon" href="images/favicon.ico"> -->
-		<!-- <link rel="apple-touch-icon" href="images/apple-touch-icon.png"> -->
+		<link rel="stylesheet" href="http://twitter.github.com/bootstrap/1.3.0/bootstrap.min.css">
 		<link rel="stylesheet" type="text/css" href="stylesheets/style.css" />
-		<link href='http://fonts.googleapis.com/css?family=Comfortaa' rel='stylesheet' type='text/css'>
-		<link href='http://fonts.googleapis.com/css?family=Antic' rel='stylesheet' type='text/css'>
+		
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+		<script src="http://twitter.github.com/bootstrap/assets/js/google-code-prettify/prettify.js"></script>
+		<script>$(function () { prettyPrint() })</script>
+		<script src="http://twitter.github.com/bootstrap/1.3.0/bootstrap-dropdown.js"></script>
+		
+		<!-- <link rel="shortcut icon" type="image/x-icon" href="assets/ico/favicon.ico">
+		<link rel="apple-touch-icon" href="assets/ico/bootstrap-apple-57x57.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="assets/ico/bootstrap-apple-72x72.png">
+		<link rel="apple-touch-icon" sizes="114x114" href="assets/ico/bootstrap-apple-114x114.png"> -->
 	</head>
 	<body onload="step()" onmouseout="step()">
-		<div id="main">
-			<h1 class="RyanBalfanz">Ryan Balfanz</h1>
-			<hr class="minimal" />
-			<div class="chartContainer boxed"></div>
+		<div class="topbar" data-dropdown="dropdown">
+			<div class="topbar-inner">
+				<div class="container">
+					<a class="brand" href="#">Ryan Balfanz</a>
+					<ul class="nav">
+						<li class="active"><a href="#">Home</a></li>
+						<li><a href="#about">About</a></li>
+						<li><a href="#around">Around the Web</a></li>
+					</ul>
+					<ul class="nav secondary-nav">
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle">Select Theme</a>
+							<ul class="dropdown-menu">
+								<li class="active" id="theme-primary"><a href="#">Primary</a></li>
+								<li id="theme-secondary"><a href="#">Secondary</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
 		</div>
+	
+		<div class="container">
+			
+			<div class="content">
+				<div class="page-header">
+					<div class="chartContainer"></div>
+				</div>
+			</div> <!-- /content -->
+			<div class="row">
+				<div class="span16" id="about">
+					<h3>About</h3>
+					<p>Ryan lives and works in the San Francisco Bay Area. He is currently employed at <a href="http://www.mindsnacks.com/">Mind Snacks</a> as a Software Engineer.<p>
+					<p>Before leaving for California to work for <a href="http://www.mint.com/">Mint.com</a> he was graduate student studying Computational Condensed Matter Physics back in the Midwest.</p>
+					<p>There, he also studied at Illinois State University, and was awarded a double B.S. in Computational Physics and Mathematics.</p>
+					<p>It was at ISU's <a href="http://gammaphicircus.illinoisstate.edu/">Gamma Phi Circus</a> where he also learned to ride a unicycle, eat and breath fire, juggle, and flip off things. But it was the German Wheel that really struck his fancy, even competing at the USA Wheel Gymnastics National Championships.<p>
+				</div>
+				<div class="span16" id="around">
+					<h3>Around the Web</h3>
+					<ul>
+						<li><a href="skype:rbalfanz?call">Skype</a></li>
+						<li><a href="http://www.facebook.com/ryanbalfanz">Facebook</a></li>
+						<li><a href="http://opencard.me/ryan">Opencard.me</a></li>
+						<li><a href="http://about.me/ryanbalfanz">About.me</a></li>
+						<li><a href="http://www.quora.com/Ryan-Balfanz">Quora</a></li>
+						<li><a href="http://www.phy.ilstu.edu/~rbalfanz/">ISU Physics</a></li>
+						<li><a href="http://twitter.com/#!/RyanBalfanz">Twitter</a></li>
+						<li><a href="http://www.linkedin.com/in/ryanbalfanz">LinkedIn</a></li>
+						<li><a href="https://plus.google.com/110215190357604826027/">Google+</a></li>
+					</ul>
+				</div>
+			</div>
+			<footer>
+				<p>&copy; Ryan Balfanz 2011</p>
+			</footer>
+		</div> <!-- /container -->
 		<!-- Begin Javascripts -->
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
 		<script type="text/javascript" src="http://cdn.znaflab.com/d3/1.1.7/d3.min.js"></script>
 
 		<script type="text/javascript" src="js/visualization.js"></script>
-		<script type="text/javascript">
+		<script type="text/javascript" src="js/themeSelector.js"></script>
 		<script type="text/javascript">
 		  var _gaq = _gaq || [];
 		  _gaq.push(['_setAccount', 'UA-15031643-1']);
