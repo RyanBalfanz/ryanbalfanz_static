@@ -1,0 +1,57 @@
+body {
+	margin: 0;
+	padding: 0;
+}
+
+#main {
+	width: 960px;
+	padding: 20px;
+	margin: 0 auto;
+}
+
+hr.minimal {
+	border: 0;
+	width: 100%;
+	color: blue;
+	background-color: #A9A9A9;
+	height: 1px;
+}
+
+h1 {
+	-webkit-font-smoothing: antialiased;
+	color: #6CA6E4;
+	color: darkgray;
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-size: 3em;
+	font-style: normal;
+	font-weight: 200;
+	outline-color: #6CA6E4;
+}
+
+.RyanBalfanz {
+		/*
+		font-family: 'Comfortaa', cursive;
+		font-family: 'Antic', cursive;
+		*/
+		font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+		font-size: 3em;
+		font-variant:small-caps;
+}
+
+.chartContainer {
+	border-style:none;
+}
+
+.boxed {
+	border: 0px;
+	background-color: white;
+	border-radius: 5px;
+	padding: 10px;
+	-webkit-box-shadow: 0 0 0px 0 rgba(0,0,0,0.5),inset 0 0 1px 0 rgba(255,255,255,0.9);
+	-moz-box-shadow: 0 0 0px 0 rgba(0,0,0,0.5),inset 0 0 1px 0 rgba(255,255,255,0.9);
+}
+
+.chart rect {
+	stroke: white;
+	fill: steelblue;
+}
