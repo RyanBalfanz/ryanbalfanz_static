@@ -58,3 +58,4 @@ def deploy(branch="master"):
 	with cd(env.remote_app_dir):
 		run("git pull origin".format(branch=branch))
 		run("git checkout {branch}".format(branch=branch))
+		run("git describe --always --tag > ./VERSION")
