@@ -2,7 +2,7 @@ var chartProperties = {
 	numDataPoints: 150,
 	height: 100,
 	width: 940,
-	redrawInterval: 1000*30
+	redrawInterval: 1000*10
 };
 
 var randomData = function(n){
@@ -46,7 +46,7 @@ function redraw() {
 	chart.selectAll("rect")
 		 .data(data)
 		.transition()
-			.duration(chartProperties.redrawInterval*0.1)
+			.duration(chartProperties.redrawInterval*0.5)
 			// .attr("x", x)
 			// .attr("y", 0)
 			.attr("height", y)
