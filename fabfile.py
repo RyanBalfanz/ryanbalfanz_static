@@ -52,8 +52,8 @@ def deploy(branch="master"):
 	with open("./VERSION", "rb") as f:
 		s = f.read()
 		print s, get_git_tag()
-		assert f.read() == get_git_tag()
-	assert False
+		# assert f.read() == get_git_tag()
+	# assert False
 	local("git push origin {branch}".format(branch=branch))
 	with cd(env.remote_app_dir):
 		# run("git pull origin".format(branch=branch))
