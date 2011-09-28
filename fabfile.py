@@ -56,8 +56,8 @@ def deploy(branch="master"):
 	# assert False
 	local("git push origin {branch}".format(branch=branch))
 	with cd(env.remote_app_dir):
-		# run("git pull origin".format(branch=branch))
-		# run("git checkout {branch}".format(branch=branch))
+		run("git pull origin".format(branch=branch))
+		run("git checkout {branch}".format(branch=branch))
 		
 		run("rm -i ./version.js")
 		run("""echo 'var version="' > ./version.js""")
