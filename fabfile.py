@@ -61,5 +61,5 @@ def deploy(branch="master"):
 		
 		run("rm -i ./version.js")
 		run("""echo -n 'var version="' > ./version.js""")
-		run("echo `git describe --always --tag >> ./version.js`")
+		run("echo `git describe --always --tag  | perl -ne 'chomp and print' >> ./version.js`")
 		run("""echo -n '";' >> ./version.js""")
