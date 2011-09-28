@@ -1,3 +1,5 @@
+import subprocess
+
 from fabric.api import cd
 from fabric.api import env
 from fabric.api import local
@@ -30,9 +32,28 @@ def prepare_css(environment=None, style=None):
 	compassCmd = "compass compile {options} --force".format(options=optStr)
 	local(compassCmd)
 
+def get_git_tag():
+	"""docstring for get_git_tag"""
+	return subprocess.Popen(["git", "describe", "--always"], stdout=subprocess.PIPE).communicate()[0]
+
+def write_version_files():
+	"""docstring for write_version_file"""
+	currentTag = get_git_tag().strip()
+	
+	with open("./VERSION", "w") as f:
+		f.write("{version}\n".format(version=currentTag))
+		
+	with open("./version.js", "w") as f:
+		f.write("var version='{version}';\n".format(version=currentTag))
+
 def deploy(branch="master"):
 	"""Deploy the site."""
 	require('hosts', provided_by = [prod,])
+	with open("./VERSION", "rb") as f:
+		s = f.read()
+		print s, get_git_tag()
+		assert f.read() == get_git_tag()
+	assert False
 	local("git push origin {branch}".format(branch=branch))
 	with cd(env.remote_app_dir):
 		run("git pull origin".format(branch=branch))
