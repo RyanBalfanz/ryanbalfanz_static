@@ -60,6 +60,6 @@ def deploy(branch="master"):
 		run("git checkout {branch}".format(branch=branch))
 		
 		run("rm -i ./version.js")
-		run("""echo 'var version="' > ./version.js""")
-		run("echo `git describe --always --tag >> ./version.js`")
-		run("""echo '";' >> ./version.js""")
+		run("""echo -n 'var version="' > ./version.js""")
+		run("echo `git describe --always --tag  | perl -ne 'chomp and print' >> ./version.js`")
+		run("""echo -n '";' >> ./version.js""")
